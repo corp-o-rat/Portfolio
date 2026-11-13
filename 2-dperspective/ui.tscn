@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://62p4ou10e364"]
+
+[ext_resource type="Script" uid="uid://ckadqeea3qsgj" path="res://ui.gd" id="1_m6e0p"]
+[ext_resource type="Theme" uid="uid://dya7xasavqlu6" path="res://Text1.tres" id="2_27fn8"]
+[ext_resource type="Texture2D" uid="uid://l2ava0oalg0v" path="res://rolling.png" id="3_27fn8"]
+
+[node name="Ui" type="Control" unique_id=796433095]
+custom_minimum_size = Vector2(1152, 648)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m6e0p")
+
+[node name="M" type="MarginContainer" parent="." unique_id=1421190828]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="NinePatchRect" type="NinePatchRect" parent="M" unique_id=298109312]
+layout_mode = 2
+
+[node name="V" type="VBoxContainer" parent="M" unique_id=1814135777]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="M/V" unique_id=924578607]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="H" type="HBoxContainer" parent="M/V" unique_id=630397754]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="Speed" type="Label" parent="M/V/H" unique_id=754965495]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_27fn8")
+text = "0.0 mph"
+
+[node name="wheels" type="NinePatchRect" parent="M/V/H" unique_id=1941837121]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+texture = ExtResource("3_27fn8")
+
+[node name="traction" type="Label" parent="M/V/H" unique_id=377925385]
+layout_mode = 2

@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://b0r3u0m7po8dk"]
+
+[ext_resource type="Texture2D" uid="uid://die5qiw6vcet6" path="res://roadtiles.png" id="1_0cwxj"]
+[ext_resource type="Script" uid="uid://bofct55ok64yu" path="res://left.gd" id="2_47g12"]
+[ext_resource type="Script" uid="uid://ba6n7fks0u1nu" path="res://right.gd" id="3_2jfoi"]
+
+[node name="Roads" type="Node2D" unique_id=153327118]
+
+[node name="2RL" type="Sprite2D" parent="." unique_id=1768487299]
+position = Vector2(16, 16)
+texture = ExtResource("1_0cwxj")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="Left" type="Area2D" parent="2RL" unique_id=1319128957]
+position = Vector2(-16, -16)
+collision_layer = 4
+collision_mask = 18
+script = ExtResource("2_47g12")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="2RL/Left" unique_id=507000717]
+polygon = PackedVector2Array(0, 32, 15, 32, 15, 0, 0, 0)
+
+[node name="Right" type="Area2D" parent="2RL" unique_id=705634871]
+position = Vector2(-16, -16)
+collision_layer = 4
+collision_mask = 18
+script = ExtResource("3_2jfoi")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="2RL/Right" unique_id=505311564]
+polygon = PackedVector2Array(17, 32, 32, 32, 32, 0, 17, 0)
+
+[connection signal="body_shape_entered" from="2RL/Left" to="2RL/Left" method="_on_body_shape_entered"]
+[connection signal="body_shape_entered" from="2RL/Right" to="2RL/Right" method="_on_body_shape_entered"]

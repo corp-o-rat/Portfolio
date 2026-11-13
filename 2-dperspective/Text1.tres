@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://dya7xasavqlu6"]
+
+[ext_resource type="FontFile" uid="uid://bv6bkbit03ihu" path="res://earthorbiteracad.ttf" id="1_fvfrw"]
+
+[resource]
+default_font = ExtResource("1_fvfrw")
+default_font_size = 48
+/colors/Text = Color(1, 0.19215687, 1, 1)

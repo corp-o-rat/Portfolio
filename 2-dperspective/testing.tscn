@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://q4bobnpn22xj"]
+
+[ext_resource type="Texture2D" uid="uid://dj6ypiuqvdlpb" path="res://ptest.png" id="1_co24e"]
+[ext_resource type="PackedScene" uid="uid://dh02g6yi7t7xf" path="res://fakecar.tscn" id="2_feb8i"]
+[ext_resource type="Script" uid="uid://biq4gx3c203tn" path="res://CameraSmoothing.gd" id="3_feb8i"]
+[ext_resource type="Texture2D" uid="uid://die5qiw6vcet6" path="res://roadtiles.png" id="4_jn4p2"]
+[ext_resource type="Script" uid="uid://bofct55ok64yu" path="res://left.gd" id="5_ybq6y"]
+[ext_resource type="Script" uid="uid://ba6n7fks0u1nu" path="res://right.gd" id="6_11ixh"]
+
+[node name="Node2D" type="Node2D" unique_id=527093921]
+
+[node name="Ptest" type="Sprite2D" parent="." unique_id=107607854]
+texture = ExtResource("1_co24e")
+
+[node name="Player" parent="." unique_id=284897616 instance=ExtResource("2_feb8i")]
+unique_name_in_owner = true
+position = Vector2(311, 214)
+
+[node name="PlayerCamera" type="Camera2D" parent="." unique_id=436122499]
+zoom = Vector2(8, 8)
+script = ExtResource("3_feb8i")
+
+[node name="Roads" type="Node2D" parent="." unique_id=153327118]
+
+[node name="2RL" type="Sprite2D" parent="Roads" unique_id=1768487299]
+position = Vector2(16, 16)
+texture = ExtResource("4_jn4p2")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="Left" type="Area2D" parent="Roads/2RL" unique_id=1319128957]
+position = Vector2(-16, -16)
+collision_layer = 4
+collision_mask = 19
+script = ExtResource("5_ybq6y")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Roads/2RL/Left" unique_id=507000717]
+polygon = PackedVector2Array(0, 32, 15, 32, 15, 0, 0, 0)
+
+[node name="Right" type="Area2D" parent="Roads/2RL" unique_id=705634871]
+position = Vector2(-16, -16)
+collision_layer = 4
+collision_mask = 19
+script = ExtResource("6_11ixh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Roads/2RL/Right" unique_id=505311564]
+polygon = PackedVector2Array(17, 32, 32, 32, 32, 0, 17, 0)
+
+[connection signal="body_shape_entered" from="Roads/2RL/Left" to="Roads/2RL/Left" method="_on_body_shape_entered"]
+[connection signal="body_shape_entered" from="Roads/2RL/Right" to="Roads/2RL/Right" method="_on_body_shape_entered"]

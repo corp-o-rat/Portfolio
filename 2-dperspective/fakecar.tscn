@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://dh02g6yi7t7xf"]
+
+[ext_resource type="Script" uid="uid://c8c38rpypipdq" path="res://fakecar.gd" id="1_d8s6w"]
+[ext_resource type="Texture2D" uid="uid://clo2ca16nupyi" path="res://testcar.png" id="2_i1rsb"]
+[ext_resource type="Script" uid="uid://baoomorxecfbp" path="res://SkidMarks.gd" id="3_s8cki"]
+[ext_resource type="Script" uid="uid://23eedfkag24s" path="res://hurtbox.gd" id="4_4om77"]
+[ext_resource type="Script" uid="uid://mbyel0ruwa8p" path="res://hitbox.gd" id="5_s0l4e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_06lh1"]
+size = Vector2(8, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0hk8"]
+size = Vector2(21, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjudg"]
+size = Vector2(22, 8)
+
+[node name="Node2D" type="CharacterBody2D" unique_id=284897616]
+scale = Vector2(0.5, 0.5)
+collision_mask = 54
+motion_mode = 1
+wall_min_slide_angle = 3.1415927
+script = ExtResource("1_d8s6w")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1668351586]
+rotation = -1.5707964
+texture = ExtResource("2_i1rsb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=504429050]
+position = Vector2(0.5, -3.85446e-07)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_06lh1")
+
+[node name="Smoke" type="CPUParticles2D" parent="." unique_id=914811204]
+unique_name_in_owner = true
+position = Vector2(-10, 0)
+emitting = false
+amount = 24
+emission_shape = 3
+emission_rect_extents = Vector2(1, 4)
+direction = Vector2(-1, 0)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 20.0
+
+[node name="Crash" type="CPUParticles2D" parent="." unique_id=507382063]
+unique_name_in_owner = true
+emitting = false
+amount = 20
+lifetime = 5.0
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+lifetime_randomness = 1.0
+direction = Vector2(-1, 0)
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 50.0
+damping_min = 10.0
+damping_max = 20.0
+color = Color(0.7411765, 0.1882353, 0.14901961, 1)
+
+[node name="wheel1" type="Node2D" parent="." unique_id=601682445]
+position = Vector2(-8, -2)
+script = ExtResource("3_s8cki")
+
+[node name="wheel2" type="Node2D" parent="." unique_id=1981326389]
+position = Vector2(-8, 2)
+script = ExtResource("3_s8cki")
+
+[node name="wheel3" type="Node2D" parent="." unique_id=930818652]
+visible = false
+position = Vector2(8, 2)
+
+[node name="wheel4" type="Node2D" parent="." unique_id=1751220652]
+visible = false
+position = Vector2(8, -2)
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1158479666]
+collision_mask = 26
+script = ExtResource("4_4om77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1049971128]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_v0hk8")
+debug_color = Color(0, 0.742807, 0.30034107, 0.41960785)
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=442048250]
+collision_mask = 18
+script = ExtResource("5_s0l4e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1367337543]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_mjudg")
+debug_color = Color(0.9137255, 0, 0.03529412, 0.41960785)
+
+[connection signal="drift" from="." to="wheel1" method="_on_node_2d_drift"]
+[connection signal="drift" from="." to="wheel2" method="_on_node_2d_drift"]
+[connection signal="body_shape_entered" from="Hurtbox" to="Hurtbox" method="_on_body_shape_entered"]
+[connection signal="body_shape_entered" from="Hitbox" to="Hitbox" method="_on_body_shape_entered"]

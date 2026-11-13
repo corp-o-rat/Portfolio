@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c5ua7hkibgmi1"]
+
+[ext_resource type="PackedScene" uid="uid://cdpcqytir5jcr" path="res://building.blend" id="1_y2yqg"]
+
+[node name="Node3D" type="Node3D" unique_id=1969187779]
+
+[node name="building" parent="." unique_id=1028890539 instance=ExtResource("1_y2yqg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.792034, -0.7314615, -23.729202)
