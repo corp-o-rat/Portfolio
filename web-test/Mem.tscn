@@ -1,0 +1,264 @@
+[gd_scene format=3 uid="uid://dicu5hs4elhrc"]
+
+[ext_resource type="Texture2D" uid="uid://5qwja6lo5ag0" path="res://icon.svg" id="1_64h2u"]
+[ext_resource type="Script" uid="uid://bm14qbu8gnyae" path="res://mem.gd" id="1_jf58p"]
+[ext_resource type="Texture2D" uid="uid://c2k4i006sq4ql" path="res://blue.png" id="3_6co18"]
+[ext_resource type="Texture2D" uid="uid://dnac1s58b6hi5" path="res://HbarEmpty.png" id="3_kxhs2"]
+[ext_resource type="Texture2D" uid="uid://hiiwmxiv16tc" path="res://HbarFull.png" id="4_ah3hb"]
+[ext_resource type="Texture2D" uid="uid://bnj0b4ron7r1h" path="res://red.png" id="4_trae6"]
+[ext_resource type="Texture2D" uid="uid://cv2ir0twuj0te" path="res://green.png" id="5_x8sif"]
+[ext_resource type="Texture2D" uid="uid://cccnkhwaa2mqs" path="res://brown.png" id="6_78q1g"]
+[ext_resource type="Texture2D" uid="uid://bb23xc2jb2mtl" path="res://WinBg.png" id="7_78q1g"]
+[ext_resource type="Texture2D" uid="uid://8e83l7i5frf8" path="res://playagain.png" id="8_jj838"]
+[ext_resource type="Texture2D" uid="uid://dovkfl23ax8rc" path="res://return.png" id="9_kxhs2"]
+
+[node name="Control" type="Control" unique_id=2098074485]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jf58p")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1381519721]
+custom_minimum_size = Vector2(1152, 648)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -304.0
+offset_right = 576.0
+offset_bottom = 304.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1042696242]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer" unique_id=1561318601]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 300
+theme_override_constants/margin_bottom = 20
+
+[node name="Start" type="TextureButton" parent="HBoxContainer/VBoxContainer/MarginContainer" unique_id=183663525]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("1_64h2u")
+
+[node name="Game" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/MarginContainer" unique_id=577376426]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Instructions" type="Label" parent="HBoxContainer/VBoxContainer/MarginContainer/Game" unique_id=1095525977]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+text = "Remember the order"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/MarginContainer/Game" unique_id=946288007]
+layout_mode = 2
+
+[node name="Health" type="Label" parent="HBoxContainer/VBoxContainer/MarginContainer/Game/HBoxContainer" unique_id=1085834881]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Lives" type="TextureProgressBar" parent="HBoxContainer/VBoxContainer/MarginContainer/Game/HBoxContainer" unique_id=1223615049]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(96, 32)
+layout_mode = 2
+max_value = 3.0
+nine_patch_stretch = true
+texture_under = ExtResource("3_kxhs2")
+texture_progress = ExtResource("4_ah3hb")
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/MarginContainer/Game" unique_id=150800737]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="OPs" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/MarginContainer/Game" unique_id=2007220766]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Control2" type="Control" parent="HBoxContainer/VBoxContainer/MarginContainer/Game" unique_id=1347522106]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer/VBoxContainer/MarginContainer/Game" unique_id=1414341029]
+unique_name_in_owner = true
+layout_mode = 2
+step = 1.0
+
+[node name="APs" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/MarginContainer/Game" unique_id=532378911]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Pic1" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/MarginContainer/Game/APs" unique_id=1298181562 groups=["APs"]]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/MarginContainer/Game/APs/Pic1" unique_id=825629261]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("3_6co18")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer/VBoxContainer/MarginContainer/Game/APs/Pic1" unique_id=1510724662]
+layout_mode = 2
+max_value = 1.0
+step = 1.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/MarginContainer/Game/APs/Pic1" unique_id=292027712]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="Pic2" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/MarginContainer/Game/APs" unique_id=885539264 groups=["APs"]]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/MarginContainer/Game/APs/Pic2" unique_id=2005817045]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("5_x8sif")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer/VBoxContainer/MarginContainer/Game/APs/Pic2" unique_id=1188470130]
+layout_mode = 2
+max_value = 1.0
+step = 1.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/MarginContainer/Game/APs/Pic2" unique_id=84090221]
+layout_mode = 2
+text = "1"
+horizontal_alignment = 1
+
+[node name="Pic3" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/MarginContainer/Game/APs" unique_id=2019543138 groups=["APs"]]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/MarginContainer/Game/APs/Pic3" unique_id=934809261]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("6_78q1g")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer/VBoxContainer/MarginContainer/Game/APs/Pic3" unique_id=1008266677]
+layout_mode = 2
+max_value = 1.0
+step = 1.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/MarginContainer/Game/APs/Pic3" unique_id=423748609]
+layout_mode = 2
+text = "2"
+horizontal_alignment = 1
+
+[node name="Pic4" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/MarginContainer/Game/APs" unique_id=259250906 groups=["APs"]]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/MarginContainer/Game/APs/Pic4" unique_id=47972525]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("4_trae6")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer/VBoxContainer/MarginContainer/Game/APs/Pic4" unique_id=1414292635]
+layout_mode = 2
+max_value = 1.0
+step = 1.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/MarginContainer/Game/APs/Pic4" unique_id=670764785]
+layout_mode = 2
+text = "3"
+horizontal_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/MarginContainer/Game" unique_id=1188001726]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+texture_normal = ExtResource("1_64h2u")
+stretch_mode = 0
+
+[node name="Victory" type="TextureRect" parent="HBoxContainer/VBoxContainer/MarginContainer" unique_id=196266007]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+texture = ExtResource("7_78q1g")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/MarginContainer/Victory" unique_id=1601984143]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/MarginContainer/Victory/VBoxContainer" unique_id=1005910428]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 16
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/MarginContainer/Victory/VBoxContainer/MarginContainer" unique_id=206033771]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 72
+text = "You Win"
+horizontal_alignment = 1
+
+[node name="PlayAgain" type="TextureButton" parent="HBoxContainer/VBoxContainer/MarginContainer/Victory/VBoxContainer" unique_id=1172293617]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("8_jj838")
+
+[node name="Return" type="TextureButton" parent="HBoxContainer/VBoxContainer/MarginContainer/Victory/VBoxContainer" unique_id=1737733349]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("9_kxhs2")
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/MarginContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/MarginContainer/Game/APs/Pic1/TextureButton" to="." method="_on_texture_rect_mouse_entered" binds= ["Pic1"]]
+[connection signal="mouse_exited" from="HBoxContainer/VBoxContainer/MarginContainer/Game/APs/Pic1/TextureButton" to="." method="_on_texture_rect_mouse_exited" binds= ["Pic1"]]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/MarginContainer/Game/APs/Pic1/TextureButton" to="." method="_on_texture_rect_pressed" binds= ["Pic1"]]
+[connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/MarginContainer/Game/APs/Pic2/TextureButton" to="." method="_on_texture_rect_mouse_entered" binds= ["Pic2"]]
+[connection signal="mouse_exited" from="HBoxContainer/VBoxContainer/MarginContainer/Game/APs/Pic2/TextureButton" to="." method="_on_texture_rect_mouse_exited" binds= ["Pic2"]]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/MarginContainer/Game/APs/Pic2/TextureButton" to="." method="_on_texture_rect_pressed" binds= ["Pic2"]]
+[connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/MarginContainer/Game/APs/Pic3/TextureButton" to="." method="_on_texture_rect_mouse_entered" binds= ["Pic3"]]
+[connection signal="mouse_exited" from="HBoxContainer/VBoxContainer/MarginContainer/Game/APs/Pic3/TextureButton" to="." method="_on_texture_rect_mouse_exited" binds= ["Pic3"]]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/MarginContainer/Game/APs/Pic3/TextureButton" to="." method="_on_texture_rect_pressed" binds= ["Pic3"]]
+[connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/MarginContainer/Game/APs/Pic4/TextureButton" to="." method="_on_texture_rect_mouse_entered" binds= ["Pic4"]]
+[connection signal="mouse_exited" from="HBoxContainer/VBoxContainer/MarginContainer/Game/APs/Pic4/TextureButton" to="." method="_on_texture_rect_mouse_exited" binds= ["Pic4"]]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/MarginContainer/Game/APs/Pic4/TextureButton" to="." method="_on_texture_rect_pressed" binds= ["Pic4"]]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/MarginContainer/Game/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/MarginContainer/Victory/VBoxContainer/PlayAgain" to="." method="_on_play_again_pressed"]
