@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://uekhhmd1n6pw"]
+
+[ext_resource type="Script" uid="uid://c8iyhorn4o0cl" path="res://inv.gd" id="1_bqug3"]
+[ext_resource type="Texture2D" uid="uid://xk2gkwj4mlj0" path="res://UI/inventoryslotbg.png" id="1_rgyq7"]
+
+[node name="Control" type="Control" unique_id=242326583]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bqug3")
+
+[node name="H" type="HBoxContainer" parent="." unique_id=713834941]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="M" type="MarginContainer" parent="H" unique_id=2056392166]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="V" type="VBoxContainer" parent="H/M" unique_id=180737907]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 16
+
+[node name="HelmetSlot" type="TextureRect" parent="H/M/V" unique_id=2117717292 groups=["hover"]]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_rgyq7")
+
+[node name="S" type="TextureRect" parent="H/M/V/HelmetSlot" unique_id=1878730863]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ChestplateSlot" type="TextureRect" parent="H/M/V" unique_id=673186344 groups=["hover"]]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_rgyq7")
+
+[node name="S" type="TextureRect" parent="H/M/V/ChestplateSlot" unique_id=1383477598]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GauntletSlot" type="TextureRect" parent="H/M/V" unique_id=1735410776 groups=["hover"]]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_rgyq7")
+
+[node name="S" type="TextureRect" parent="H/M/V/GauntletSlot" unique_id=1483467363]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeggingsSlot" type="TextureRect" parent="H/M/V" unique_id=1454925975 groups=["hover"]]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_rgyq7")
+
+[node name="S" type="TextureRect" parent="H/M/V/LeggingsSlot" unique_id=525985481]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BootsSlot" type="TextureRect" parent="H/M/V" unique_id=1904163800 groups=["hover"]]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_rgyq7")
+
+[node name="S" type="TextureRect" parent="H/M/V/BootsSlot" unique_id=423063381]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemSlot" type="TextureRect" parent="H/M/V" unique_id=1962642602 groups=["hover"]]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_rgyq7")
+
+[node name="S" type="TextureRect" parent="H/M/V/ItemSlot" unique_id=1834675719]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
