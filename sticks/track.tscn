@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://d2m2ei68ts4ve"]
+
+[ext_resource type="Script" uid="uid://yp0pnodb4keb" path="res://track.gd" id="1_t0gok"]
+[ext_resource type="Texture2D" uid="uid://7qxav7wdtw0" path="res://grass.png" id="1_t1oi4"]
+[ext_resource type="Texture2D" uid="uid://yjxiy4aauwgb" path="res://river.png" id="2_l1aip"]
+[ext_resource type="Script" uid="uid://b62sxjyppbp3b" path="res://camera_2d.gd" id="6_ucvjy"]
+[ext_resource type="PackedScene" uid="uid://ik6wawwfliuh" path="res://endscreeen.tscn" id="7_82y7p"]
+[ext_resource type="Texture2D" uid="uid://b1c71jy4m0rqy" path="res://bridge.png" id="9_2vwrv"]
+[ext_resource type="PackedScene" uid="uid://bigmxnlvtoslg" path="res://voting.tscn" id="11_vhw2h"]
+
+[node name="Node2D" type="Node2D" unique_id=397740010]
+script = ExtResource("1_t0gok")
+num_sticks = 6
+
+[node name="Track" type="Sprite2D" parent="." unique_id=2055043660]
+position = Vector2(1920, 540)
+texture = ExtResource("1_t1oi4")
+
+[node name="Track2" type="Sprite2D" parent="." unique_id=701163885]
+position = Vector2(1920, 540)
+texture = ExtResource("2_l1aip")
+
+[node name="RiverT" type="StaticBody2D" parent="Track2" unique_id=1171151140]
+collision_layer = 2
+
+[node name="C" type="CollisionPolygon2D" parent="Track2/RiverT" unique_id=1957039723]
+polygon = PackedVector2Array(-1921, -95, -1547, -187, -1307, -215, -1081, -245, -852, -266, -295, -254, 47, -244, 419, -260, 897, -269, 1184, -227, 1387, -217, 1696, -140, 1797, -128, 1845, -111, 1919, -92, 1920, -539, -1920, -540)
+
+[node name="RiverB" type="StaticBody2D" parent="Track2" unique_id=1572388173]
+collision_layer = 2
+
+[node name="C" type="CollisionPolygon2D" parent="Track2/RiverB" unique_id=141559963]
+polygon = PackedVector2Array(-1919, 344, -1276, 204, -929, 182, -797, 174, -580, 165, -417, 170, -322, 170, -103, 190, 101, 191, 299, 168, 542, 161, 778, 179, 923, 176, 1072, 164, 1195, 189, 1380, 208, 1491, 252, 1713, 272, 1838, 311, 1920, 352, 1920, 540, -1930, 548)
+
+[node name="Line2D" type="Line2D" parent="." unique_id=889108079]
+visible = false
+points = PackedVector2Array(63, 756, 213.5144, 725.28253, 352.58276, 696.90094, 490.46454, 671.7401, 637, 645, 804.71783, 631.94995, 965.2288, 619.46063, 1158, 597, 1331, 591, 1463.9856, 599.2949, 1598.1543, 607.6636, 1815, 621, 2011, 638, 2181, 625, 2481, 601, 2674, 627, 2822, 640, 2968, 613, 3139, 642, 3305, 656, 3391, 694, 3617, 714)
+
+[node name="BottomBorder" type="Line2D" parent="." unique_id=1464284041]
+unique_name_in_owner = true
+visible = false
+points = PackedVector2Array(63, 860, 193.32306, 830.7476, 352.583, 795, 495.2386, 766.41046, 637, 738, 811.0467, 725.804, 965.229, 715, 1158, 707.549, 1331, 701, 1457.4373, 702.42, 1598.15, 704, 1828, 724, 2031, 723, 2212, 701, 2509, 695, 2682, 712, 2848, 715, 2994, 703, 3146, 731, 3305, 741, 3395, 781, 3637, 805)
+
+[node name="TopBorder" type="Line2D" parent="." unique_id=1237317742]
+unique_name_in_owner = true
+visible = false
+points = PackedVector2Array(50, 434, 179, 401, 353, 358, 468, 344, 624, 323, 780, 310, 925, 293, 1159, 280, 1302, 280, 1469, 291, 1596, 286, 1839, 294, 1974, 302, 2087, 286, 2349, 282, 2624, 277, 2801, 275, 2948, 291, 3077, 316, 3272, 330, 3373, 346, 3600, 402)
+
+[node name="Track3" type="Sprite2D" parent="." unique_id=2017368673]
+z_index = 2
+position = Vector2(1920, 540)
+texture = ExtResource("9_2vwrv")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=642184151]
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_right = 3840
+script = ExtResource("6_ucvjy")
+
+[node name="C" type="CanvasLayer" parent="." unique_id=218927652]
+
+[node name="UI" type="Control" parent="C" unique_id=1867646922]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Voting" parent="C/UI" unique_id=204868883 instance=ExtResource("11_vhw2h")]
+layout_mode = 1
+
+[node name="H" type="Control" parent="C/UI" unique_id=1916175451]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="endscreeen" parent="C/UI" unique_id=1374739288 instance=ExtResource("7_82y7p")]
+visible = false
+layout_mode = 1
+offset_left = 384.0
+offset_top = 216.0
+offset_right = 384.0
+offset_bottom = 216.0
+
+[node name="StickHolder" type="Node2D" parent="." unique_id=1710344895]
+unique_name_in_owner = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=17737474]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=390993856]
+position = Vector2(185, 0)
+polygon = PackedVector2Array(3654, 448, 3654, 886, 3579, 853, 3576, 432)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

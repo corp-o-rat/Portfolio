@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://bigmxnlvtoslg"]
+
+[ext_resource type="Script" uid="uid://dc0o14hlgen4o" path="res://voting.gd" id="1_hws0c"]
+[ext_resource type="Texture2D" uid="uid://dvbm032y4vqec" path="res://unselectedbet.png" id="1_ntlln"]
+[ext_resource type="Texture2D" uid="uid://drxa3lk2oguhm" path="res://selectedbet.png" id="2_dlx7t"]
+
+[node name="Voting" type="Control" unique_id=204868883]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_hws0c")
+
+[node name="opts" type="VBoxContainer" parent="." unique_id=1824819499]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 300.0
+offset_bottom = 177.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="opts" unique_id=1764980781]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Vote for the winner"
+
+[node name="0" type="HBoxContainer" parent="opts" unique_id=459112443]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="Submit" type="TextureButton" parent="opts/0" unique_id=1065399948]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("1_ntlln")
+texture_pressed = ExtResource("2_dlx7t")
+texture_hover = ExtResource("2_dlx7t")
+texture_disabled = ExtResource("1_ntlln")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="opts/0/Submit" unique_id=1667486590]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Submit"
+
+[connection signal="pressed" from="opts/0/Submit" to="." method="_on_submit_pressed"]

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cpuuar8wb08wf"]
+
+[ext_resource type="Texture2D" uid="uid://kww5oldbyuod" path="res://track.png" id="1_wtcfe"]
+
+[node name="Node2D" type="Node2D" unique_id=397740010]
+
+[node name="Track" type="Sprite2D" parent="." unique_id=2055043660]
+position = Vector2(960, 540)
+texture = ExtResource("1_wtcfe")
